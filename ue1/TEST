@@ -1,4 +1,0 @@
-  5. Vim schreibt die ausgewählten Zeilen in die Datei TEST. Benutze  :!dir
-     oder  :!ls , um sie zu sehen. Lösche sie noch nicht! Wir werden sie in
-     der nächsten Lektion benutzen.
-
