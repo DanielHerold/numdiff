@@ -63,22 +63,6 @@ public:
   }
 };
 
-class Netzwerk : public ODE_Function
-{
-
-double w;
-
-public:
-   Netzwerk(double w) : w(w){}
-
-   virtual void Eval(double t, const Vector<> & y, Vector<> & f) const
-{
-   f(0)=sin(w*t) - 1001*y(0) + 1000*y(1);
-   f(1)= 1000*(y(0)-y(1));
-}
-};
-
-
 
 int main ()
 {
@@ -88,19 +72,16 @@ cout <<"hello1" <<endl;
 
   Vector<> y0(2);
   Pendulum_ODE_Function func(1.0,1.0);
-cout<< "hello2" <<endl;
 
-/*  ofstream out("pendel_mp.data");
+  ofstream out("pendel_mp.data");
   y0(0)=M_PI/4;
   y0(1)=0.0;
-  ODESolver (func, imp_mp, 0, y0, 100, 0.0001, out);
-*/
-cout<<"hello3" <<endl;
+  ODESolver (func, imp_mp, 0, y0, 10000, 0.0001, out);
 
   ofstream out2("pendel_gauss.data");
   y0(0)=M_PI/4;
   y0(1)=0.0;
-  ODESolver (func, imp_gauss, 0, y0, 100, 0.0001, out2);
+  ODESolver (func, imp_gauss, 0, y0, 10000, 0.0001, out2);
 
   return 0;
 }
