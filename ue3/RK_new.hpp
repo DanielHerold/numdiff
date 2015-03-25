@@ -142,11 +142,9 @@ int test;
     delta=-dF*evalF;
     zero+=delta;
 
-cout << "delta="<<delta<<endl;
-
     q=L2Norm(delta)/L2Norm(delta_old);
     delta_old=delta;
-    if (q>=1) {cout << "Newton konvergiert nicht bei t="<<F.t<<endl;}
+    if (q>=1) {}
   }while(q/(1-q)*L2Norm(delta)>tol);
 
 };

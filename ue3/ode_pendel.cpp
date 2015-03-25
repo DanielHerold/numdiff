@@ -8,7 +8,7 @@
 using namespace ngbla;
 
 #include "ode.hpp"
-#include "RK_orig.hpp"
+#include "RK_new.hpp"
 
 
 /* ******************* The ODEs I want to solve  ******************** */
@@ -66,19 +66,18 @@ public:
 
 int main ()
 {
-cout <<"hello1" <<endl;
   ImplicitMidPoint imp_mp;
   ImplicitGauss imp_gauss;
 
   Vector<> y0(2);
   Pendulum_ODE_Function func(1.0,1.0);
 
-  ofstream out("pendel_mp.data");
+  ofstream out("pendelmp.data");
   y0(0)=M_PI/4;
   y0(1)=0.0;
   ODESolver (func, imp_mp, 0, y0, 10000, 0.0001, out);
 
-  ofstream out2("pendel_gauss.data");
+  ofstream out2("pendelgauss.data");
   y0(0)=M_PI/4;
   y0(1)=0.0;
   ODESolver (func, imp_gauss, 0, y0, 10000, 0.0001, out2);

@@ -50,7 +50,7 @@ void ODESolver (const ODE_Function & func, const SSM & ssm,
   double t = t0;
   int n = y0.Size();
   double temp=0.0;
-  int temp2=0;
+  int temp2=-1;
 
   Vector<> yold(n), ynew(n);
 
